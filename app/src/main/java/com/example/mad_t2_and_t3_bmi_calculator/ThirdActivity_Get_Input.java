@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class ThirdActivity_Get_Input extends AppCompatActivity
@@ -15,6 +17,7 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
 
     private TextView textViewWeight;
     private TextView textViewHeight;
+    private Button buttonNext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,6 +28,8 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
         textTitle = findViewById(R.id.textTitle);
         textViewWeight = findViewById(R.id.textViewWeight);
         textViewHeight = findViewById(R.id.textViewHeight);
+        buttonNext = findViewById(R.id.buttonNext);
+
 
         Intent intent = getIntent(); // Get the Intent
 
@@ -33,6 +38,15 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
         /* Set the User interface based on the user choice */
 
         setUserInterface(textTitle,textViewWeight,textViewHeight);
+
+        buttonNext.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+            }
+        });
     }
 
 
