@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.156" />
 
     <EditText
-        android:id="@+id/TextWeight"
+        android:id="@+id/textWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
@@ -47,10 +47,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextWeight" />
+        app:layout_constraintTop_toBottomOf="@+id/textWeight" />
 
     <EditText
-        android:id="@+id/TextHeight"
+        android:id="@+id/textHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
@@ -76,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TextHeight" />
+        app:layout_constraintTop_toBottomOf="@+id/textHeight" />
 
     <Button
         android:id="@+id/buttonNext"

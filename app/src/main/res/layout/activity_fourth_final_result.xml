@@ -46,7 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/inputHeight" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/resultBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
@@ -59,7 +59,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/resultBoxMessage"
         android:layout_width="174dp"
         android:layout_height="70dp"
         android:layout_marginTop="90dp"
@@ -70,6 +70,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/resultBox" />
 
 </android.support.constraint.ConstraintLayout>

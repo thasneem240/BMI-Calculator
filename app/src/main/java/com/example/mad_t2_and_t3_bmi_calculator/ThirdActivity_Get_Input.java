@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class ThirdActivity_Get_Input extends AppCompatActivity
@@ -14,10 +15,11 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
     private static final String CHOICE = "UserChoice";
     private String choice = "";
     private TextView textTitle;
-
     private TextView textViewWeight;
     private TextView textViewHeight;
     private Button buttonNext;
+    private EditText textWeight;
+    private EditText textHeight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -29,6 +31,8 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
         textViewWeight = findViewById(R.id.textViewWeight);
         textViewHeight = findViewById(R.id.textViewHeight);
         buttonNext = findViewById(R.id.buttonNext);
+        textWeight = findViewById(R.id.textWeight);
+        textHeight = findViewById(R.id.textHeight);
 
 
         Intent intent = getIntent(); // Get the Intent
@@ -37,14 +41,21 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
 
         /* Set the User interface based on the user choice */
 
-        setUserInterface(textTitle,textViewWeight,textViewHeight);
+        setUserInterface();
 
         buttonNext.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View view)
             {
+                /* Get the input from User */
+                double weight = Double.parseDouble(textWeight.getText().toString());
+                double height = Double.parseDouble(textHeight.getText().toString());
 
+                Intent intent = FourthActivity_FinalResult.getIntent(ThirdActivity_Get_Input.this,
+                        weight,height,choice);
+
+                startActivity(intent);
             }
         });
     }
@@ -59,24 +70,24 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
     }
 
     @SuppressLint("SetTextI18n")
-    private void setUserInterface(TextView title, TextView weight, TextView height)
+    private void setUserInterface()
     {
         if(choice.equals("Metric"))
         {
             String strTitle = getResources().getString(R.string.Title1);
 
-            title.setText(strTitle);
-            weight.setText("KG");
-            height.setText("CM");
+            textTitle.setText(strTitle);
+            textViewWeight.setText("KG");
+            textViewHeight.setText("CM");
         }
         else
         {
             /* Imperial */
 
             String strTitle = getResources().getString(R.string.Title2);
-            title.setText(strTitle);
-            weight.setText("LB");
-            height.setText("Inch");
+            textTitle.setText(strTitle);
+            textViewWeight.setText("LB");
+            textViewHeight.setText("Inch");
         }
     }
 }
