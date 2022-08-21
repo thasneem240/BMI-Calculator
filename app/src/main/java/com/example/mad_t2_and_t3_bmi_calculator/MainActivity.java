@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        buttonYes = (Button) findViewById(R.id.buttonYes);
-        buttonNo = (Button) findViewById(R.id.buttonNo);
+        buttonYes = findViewById(R.id.buttonYes);
+        buttonNo =  findViewById(R.id.buttonNo);
         myCoordinatorLayot = findViewById(R.id.myCoordinatorLayout);
 
         buttonNo.setOnClickListener(new View.OnClickListener()
