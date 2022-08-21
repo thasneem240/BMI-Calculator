@@ -28,8 +28,8 @@ public class FourthActivity_FinalResult extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth_final_result);
 
-        inputWeight = findViewById(R.id.textWeight);
-        inputHeight = findViewById(R.id.textHeight);
+        inputWeight = findViewById(R.id.inputWeight);
+        inputHeight = findViewById(R.id.inputHeight);
         resultBox = findViewById(R.id.resultBox);
         resultBoxMessage = findViewById(R.id.resultBoxMessage);
 
@@ -61,7 +61,7 @@ public class FourthActivity_FinalResult extends AppCompatActivity
     {
         String weightUnit = "KG";
         String heightUnit = "CM";
-        String str;
+        String str = "HI";
 
         if(!choice.equals("Metric"))
         {
@@ -69,15 +69,17 @@ public class FourthActivity_FinalResult extends AppCompatActivity
             heightUnit = "Inch";
         }
 
-        str = String.format("Your Weight is %lf %s",weight,weightUnit);
+        str = String.format("Your Weight is %.3f %s",weight,weightUnit);
+        //str = "Your Weight is " + weight + weightUnit;
         inputWeight.setText(str);
 
-        str = String.format("Your height is %lf %s",height,heightUnit);
+        str = String.format("Your height is %.3f %s",height,heightUnit);
         inputHeight.setText(str);
 
         double result = calculateBMI();
+        str = String.format("%.3f",result);
 
-        resultBox.setText(String.valueOf(calculateBMI()));
+        resultBox.setText(str);
     }
 
 
@@ -94,6 +96,9 @@ public class FourthActivity_FinalResult extends AppCompatActivity
             bmi = ( weight / Math.pow(height,2) ) * 703;
         }
 
+        /* Round up to 3 decimal Places and return the BMI*/
+
+       // return Math.round(bmi*1000)/1000;
         return bmi;
     }
 
