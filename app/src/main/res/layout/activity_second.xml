@@ -6,4 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity">
 
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="199dp"
+        android:layout_height="72dp"
+        android:text="@string/your_prefered_system"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <Button
+        android:id="@+id/buttonMetric"
+        android:layout_width="122dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="92dp"
+        android:background="#9C27B0"
+        android:text="@string/metric"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.222"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/buttonImperial"
+        android:layout_width="122dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="92dp"
+        android:background="#FB8C00"
+        android:text="@string/imperial"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.792"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 </android.support.constraint.ConstraintLayout>

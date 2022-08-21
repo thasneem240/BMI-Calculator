@@ -3,4 +3,7 @@
     <string name="are_you_at_least_20_years_old">Are you at least 20 Years Old?</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
+    <string name="your_prefered_system">Your prefered System</string>
+    <string name="metric">Metric</string>
+    <string name="imperial">Imperial</string>
 </resources>
