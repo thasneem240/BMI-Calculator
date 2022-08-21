@@ -9,4 +9,6 @@
     <string name="height">Height</string>
     <string name="next">NEXT</string>
     <string name="your_prefered_system">Your prefered System</string>
+    <string name="Title1">You have selected Metric System</string>
+    <string name="Title2">You have selected Imperial System</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.mad_t2_and_t3_bmi_calculator;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +9,10 @@ import android.widget.TextView;
 
 public class ThirdActivity_Get_Input extends AppCompatActivity
 {
-    private static final String CHOISE = "UserChoise";
+    private static final String CHOICE = "UserChoice";
     private String choice = "";
     private TextView textTitle;
+
     private TextView textViewWeight;
     private TextView textViewHeight;
 
@@ -26,27 +28,30 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
 
         Intent intent = getIntent(); // Get the Intent
 
-        choice = intent.getStringExtra(CHOISE); // get the data from second Activity
+        choice = intent.getStringExtra(CHOICE); // get the data from second Activity
 
         /* Set the User interface based on the user choice */
 
-        setuserInterface(textTitle,textViewWeight,textViewHeight);
+        setUserInterface(textTitle,textViewWeight,textViewHeight);
     }
 
 
     public static Intent getIntent(Context context, String choice)
     {
         Intent intent = new Intent(context,ThirdActivity_Get_Input.class);
-        intent.putExtra(CHOISE,choice);
+        intent.putExtra(CHOICE,choice);
 
         return intent;
     }
 
-    private void setuserInterface(TextView title, TextView weight, TextView height)
+    @SuppressLint("SetTextI18n")
+    private void setUserInterface(TextView title, TextView weight, TextView height)
     {
         if(choice.equals("Metric"))
         {
-            title.setText("You have selected Metric system");
+            String strTitle = getResources().getString(R.string.Title1);
+
+            title.setText(strTitle);
             weight.setText("KG");
             height.setText("CM");
         }
@@ -54,7 +59,8 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
         {
             /* Imperial */
 
-            title.setText("You have selected Imperial system");
+            String strTitle = getResources().getString(R.string.Title2);
+            title.setText(strTitle);
             weight.setText("LB");
             height.setText("Inch");
         }
