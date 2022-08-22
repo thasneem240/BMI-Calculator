@@ -12,4 +12,6 @@
     <string name="Title1">You have selected Metric System</string>
     <string name="Title2">You have selected Imperial System</string>
     <string name="your_bmi">Your BMI</string>
+    <string name="plusSign">+</string>
+    <string name="minusSign">-</string>
 </resources>
