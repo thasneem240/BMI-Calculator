@@ -4,9 +4,12 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import androidx.core.util.Pair;
-import androidx.appcompat.app.AppCompatActivity;
+import android.util.TypedValue;
+import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.util.Pair;
 
 
 public class FourthActivity_FinalResult extends AppCompatActivity
@@ -35,6 +38,8 @@ public class FourthActivity_FinalResult extends AppCompatActivity
         inputHeight = findViewById(R.id.inputHeight);
         resultBox = findViewById(R.id.resultBox);
         resultBoxMessage = findViewById(R.id.resultBoxMessage);
+        Button plusButton = findViewById(R.id.plusButton);
+        Button minusButton = findViewById(R.id.minusButton);
 
         /* Get the Intent Object */
 
@@ -48,7 +53,42 @@ public class FourthActivity_FinalResult extends AppCompatActivity
 
 
         setUserInterface();
+
+        plusButton.setOnClickListener(view -> increaseTheView());
+
+        minusButton.setOnClickListener(view -> decreaseTheView());
     }
+
+    /* Increases the entire view by 10% */
+    private void increaseTheView()
+    {
+        increaseTheTextSize(inputWeight);
+        increaseTheTextSize(inputHeight);
+        increaseTheTextSize(resultBox);
+        increaseTheTextSize(resultBoxMessage);
+    }
+
+    private void increaseTheTextSize(TextView textView)
+    {
+        float size = textView.getTextSize();
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX,size*1.1F);
+    }
+
+    /* Decreases the entire view by 10% */
+    private void decreaseTheView()
+    {
+        decreaseTheTextSize(inputWeight);
+        decreaseTheTextSize(inputHeight);
+        decreaseTheTextSize(resultBox);
+        decreaseTheTextSize(resultBoxMessage);
+    }
+
+    private void decreaseTheTextSize(TextView textView)
+    {
+        float size = textView.getTextSize();
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX,size*0.9F);
+    }
+
 
     public static Intent getIntent(Context context, double pWeight, double pHeight, String choice)
     {
@@ -60,7 +100,6 @@ public class FourthActivity_FinalResult extends AppCompatActivity
             return intent;
     }
 
-    @SuppressWarnings("ConstantConditions")
     @SuppressLint("DefaultLocale")
     private void setUserInterface()
     {
@@ -90,7 +129,7 @@ public class FourthActivity_FinalResult extends AppCompatActivity
         Pair<String, Integer> messageAndColor = getMessageAndBacColor(result);
 
         String message = String.valueOf(messageAndColor.first);
-         int color = (int)messageAndColor.second;
+         int color = messageAndColor.second;
 
         resultBoxMessage.setText(message);
         resultBoxMessage.setBackgroundColor(color);
