@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/myConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ThirdActivity_Get_Input">
@@ -25,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/weight"
         android:inputType="numberSigned|numberDecimal"
@@ -33,8 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTitle"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
     <TextView
         android:id="@+id/textViewWeight"
@@ -54,6 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/height"
         android:inputType="numberSigned|numberDecimal"
@@ -62,8 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTitle"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
     <TextView
         android:id="@+id/textViewHeight"
@@ -97,10 +98,11 @@
         android:layout_width="298dp"
         android:layout_height="26dp"
         android:layout_marginTop="32dp"
-        android:value="83.0"
+        android:theme="@style/Slider_Theme1"
+        android:value="0"
         android:valueFrom="0.0"
         android:valueTo="300.0"
-        android:theme="@style/Slider_Theme1"
+        app:haloColor="@color/ObeseIII"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,9 +114,10 @@
         android:layout_height="26dp"
         android:layout_marginTop="54dp"
         android:theme="@style/Slider_Theme2"
-        android:value="83.0"
+        android:value="0"
         android:valueFrom="0.0"
         android:valueTo="300.0"
+        app:haloColor="@color/purple_200"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
