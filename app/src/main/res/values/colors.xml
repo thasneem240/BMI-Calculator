@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="Healthyweight">#00796B</color>
+    <color name="Overweight">#EF5350</color>
+    <color name="ObeseI">#FBC02D</color>
+    <color name="ObeseII">#FFA000</color>
+    <color name="ObeseIII">#F57C00</color>
+
 </resources>

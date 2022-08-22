@@ -11,4 +11,5 @@
     <string name="your_prefered_system">Your prefered System</string>
     <string name="Title1">You have selected Metric System</string>
     <string name="Title2">You have selected Imperial System</string>
+    <string name="your_bmi">Your BMI</string>
 </resources>

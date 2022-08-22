@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:text="Your BMI"
+        android:text="@string/your_bmi"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,11 +57,9 @@
 
     <TextView
         android:id="@+id/resultBoxMessage"
-        android:layout_width="174dp"
-        android:layout_height="70dp"
+        android:layout_width="200dp"
+        android:layout_height="66dp"
         android:layout_marginTop="90dp"
-        android:background="#EF5350"
-        android:text="Overweight but not obese"
         android:textColor="@color/black"
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
