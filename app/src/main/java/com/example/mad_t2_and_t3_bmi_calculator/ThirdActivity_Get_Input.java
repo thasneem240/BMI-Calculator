@@ -9,6 +9,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -93,17 +95,13 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
             {
-
+                updateSlider(textWeight,sliderWeight);
             }
 
             @Override
             public void afterTextChanged(Editable editable)
             {
-                double newValue = Double.parseDouble(textWeight.getText().toString());
-                if( newValue <= 0 && newValue <= 300)
-                {
-                    sliderWeight.setValue((float)newValue);
-                }
+
             }
         });
 
@@ -118,20 +116,18 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2)
             {
-
+                updateSlider(textHeight,sliderHeight);
             }
 
             @Override
             public void afterTextChanged(Editable editable)
             {
 
-                double newValue = Double.parseDouble(textHeight.getText().toString());
-                if( newValue <= 0 && newValue <= 300)
-                {
-                    sliderHeight.setValue((float)newValue);
-                }
             }
         });
+
+
+
 
     }
 
@@ -264,6 +260,40 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
 
         textHeight.setText("");
         sliderHeight.setValue(0);
+    }
+
+    /* Check Whether the String is Numeric or not */
+    private boolean isNumeric(String str)
+    {
+        try
+        {
+            Double.parseDouble(str);
+            return true;
+        }
+        catch(NumberFormatException e)
+        {
+            return false;
+        }
+    }
+
+    private void updateSlider(EditText editText, Slider slider)
+    {
+        String str = String.valueOf(editText.getText());
+
+        if(isNumeric(str))
+        {
+            float newValue = (float)Double.parseDouble(str);
+
+            if( newValue >= 0 && newValue <= 300)
+            {
+                slider.setValue((float)newValue);
+                slider.setValue(newValue);
+            }
+            else
+            {
+                slider.setValue(0);
+            }
+        }
     }
 
 }
