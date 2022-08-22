@@ -69,9 +69,10 @@
 
     <Button
         android:id="@+id/plusButton"
-        android:layout_width="101dp"
-        android:layout_height="87dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="88dp"
+        android:background="@drawable/rounded_button"
         android:text="@string/plusSign"
         android:textColor="@color/colorOnSecondary"
         android:textSize="56sp"
@@ -82,11 +83,13 @@
 
     <Button
         android:id="@+id/minusButton"
-        android:layout_width="101dp"
-        android:layout_height="87dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginTop="88dp"
         android:text="@string/minusSign"
+        android:background="@drawable/rounded_button"
         android:textColor="@color/colorOnSecondary"
+        android:backgroundTint="#E32222"
         android:textSize="56sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.758"
