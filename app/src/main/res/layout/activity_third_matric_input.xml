@@ -92,5 +92,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderWeight"
+        android:layout_width="298dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="32dp"
+        android:value="83.0"
+        android:valueFrom="0.0"
+        android:valueTo="300.0"
+        android:theme="@style/Slider_Theme1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderHeight"
+        android:layout_width="298dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="54dp"
+        android:theme="@style/Slider_Theme2"
+        android:value="83.0"
+        android:valueFrom="0.0"
+        android:valueTo="300.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewWeight" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
