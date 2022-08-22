@@ -54,9 +54,15 @@ public class FourthActivity_FinalResult extends AppCompatActivity
 
         setUserInterface();
 
-        plusButton.setOnClickListener(view -> increaseTheView());
+        /* Check Whether large device or small device Only large device will contains the button */
 
-        minusButton.setOnClickListener(view -> decreaseTheView());
+        if(plusButton != null &&  minusButton != null)
+        {
+            plusButton.setOnClickListener(view -> increaseTheView());
+            minusButton.setOnClickListener(view -> decreaseTheView());
+        }
+
+
     }
 
     /* Increases the entire view by 10% */
@@ -208,6 +214,7 @@ public class FourthActivity_FinalResult extends AppCompatActivity
 
         return pair;
     }
+
 
 }
 
