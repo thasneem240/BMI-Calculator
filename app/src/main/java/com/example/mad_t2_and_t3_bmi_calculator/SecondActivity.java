@@ -4,13 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class SecondActivity extends AppCompatActivity
 {
-    private Button buttonMetric;
-    private Button buttonImperial;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -18,27 +15,13 @@ public class SecondActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        buttonMetric = findViewById(R.id.buttonMetric);
-        buttonImperial = findViewById(R.id.buttonImperial);
+        Button buttonMetric = findViewById(R.id.buttonMetric);
+        Button buttonImperial = findViewById(R.id.buttonImperial);
 
 
-        buttonMetric.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                startActivity("Metric");
-            }
-        });
+        buttonMetric.setOnClickListener(view -> startActivity("Metric"));
 
-        buttonImperial.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                startActivity("Imperial");
-            }
-        });
+        buttonImperial.setOnClickListener(view -> startActivity("Imperial"));
     }
 
     public static Intent getIntent(Context context)
