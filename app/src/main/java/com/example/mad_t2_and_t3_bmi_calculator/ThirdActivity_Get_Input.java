@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class ThirdActivity_Get_Input extends AppCompatActivity
 {
     private static final String CHOICE = "UserChoice";
@@ -43,20 +43,15 @@ public class ThirdActivity_Get_Input extends AppCompatActivity
 
         setUserInterface();
 
-        buttonNext.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View view)
-            {
-                /* Get the input from User */
-                double weight = Double.parseDouble(textWeight.getText().toString());
-                double height = Double.parseDouble(textHeight.getText().toString());
+        buttonNext.setOnClickListener(view -> {
+            /* Get the input from User */
+            double weight = Double.parseDouble(textWeight.getText().toString());
+            double height = Double.parseDouble(textHeight.getText().toString());
 
-                Intent intent = FourthActivity_FinalResult.getIntent(ThirdActivity_Get_Input.this,
-                        weight,height,choice);
+            Intent intent1 = FourthActivity_FinalResult.getIntent(ThirdActivity_Get_Input.this,
+                    weight,height,choice);
 
-                startActivity(intent);
-            }
+            startActivity(intent1);
         });
     }
 
